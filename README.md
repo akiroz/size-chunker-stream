@@ -1,5 +1,8 @@
 ## size-chunker-stream 
 
+![](https://github.com/akiroz/size-chunker-stream/actions/workflows/test.yaml/badge.svg)
+[![](https://img.shields.io/npm/v/@akiroz/size-chunker-stream)](https://www.npmjs.com/package/@akiroz/size-chunker-stream)
+
 A NodeJS transform stream for chunking raw data into constant-size chunks. Useful for consuming raw media streams where chunk size = 1 frame.
 
 ### API
