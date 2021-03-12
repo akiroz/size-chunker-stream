@@ -19,3 +19,14 @@ chunker.on("data", (frame) => {
 });
 
 ```
+
+#### Gotchas
+
+The `SizeChunker` outputs `Buffer` of constant size, this does not mean the underlaying `ArrayBuffer` is also of the same constant size. To create typed views of the data, it may be nessesary to slice the underlaying `ArrayBuffer`:
+
+```js
+chunker.on("data", ({ buffer, length, byteOffset }: Buffer) => {
+    const frame = new Int16Array(buffer.slice(byteOffset, byteOffset + length));
+    // Do stuff with frame
+});
+```
